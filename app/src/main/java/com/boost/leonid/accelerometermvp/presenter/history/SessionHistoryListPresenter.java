@@ -2,6 +2,6 @@ package com.boost.leonid.accelerometermvp.presenter.history;
 
 
 public interface SessionHistoryListPresenter {
-    void onStart();
+    void getQuery();
     void onItemClick(int position);
 }
