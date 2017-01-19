@@ -3,14 +3,7 @@ package com.boost.leonid.accelerometermvp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-/**
- * Created by leonid on 16.01.17.
- */
-
 public class Constants {
-    public static final String BASE_URL = "https://accelerometer-firebase.firebaseio.com";
-    public static final long CONNECTION_TIME_OUT = 5;
-    public static final long READ_TIME_OUT = 10;
     public static final String CHILD_USERS = "users";
     public static final String CHILD_DATA   = "data_coordinates";
 

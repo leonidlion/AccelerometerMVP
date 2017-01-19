@@ -2,9 +2,18 @@ package com.boost.leonid.accelerometermvp.view.auth;
 
 import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 
-public class BaseActivity extends AppCompatActivity {
+import com.boost.leonid.accelerometermvp.R;
+
+public abstract class BaseActivity extends AppCompatActivity {
     private ProgressDialog mProgressDialog;
+    private Toolbar mToolbar;
+
+    protected void initToolbar(){
+        mToolbar = (Toolbar) findViewById(R.id.main_toolbar);
+        setSupportActionBar(mToolbar);
+    }
 
     public void showProgress() {
         if (mProgressDialog == null){
