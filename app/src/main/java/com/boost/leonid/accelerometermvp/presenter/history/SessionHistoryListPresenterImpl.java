@@ -9,21 +9,21 @@ import com.google.firebase.database.DatabaseReference;
 
 public class SessionHistoryListPresenterImpl extends BasePresenter<HistoryItem, SessionHistoryListView> implements SessionHistoryListPresenter {
     private static final String TAG = "HistoryPresenter";
+    private DatabaseReference mReference;
+
 
     public SessionHistoryListPresenterImpl(SessionHistoryListView view) {
         bindView(view);
+        mReference = Constants.getDataCoordinatesOfUserReference(FirebaseAuth.getInstance().getCurrentUser().getUid());
     }
 
     @Override
     protected void updateView() {
-
     }
 
     @Override
-    public void getQuery() {
-        DatabaseReference reference = Constants.getDataCoordinatesOfUserReference(
-                FirebaseAuth.getInstance().getCurrentUser().getUid());
-        view().setQuery(reference);
+    public void onCreate() {
+        view().setRecycler();
+        view().setAdapter(mReference);
     }
-
 }
