@@ -5,8 +5,11 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.util.Log;
 
+import com.boost.leonid.accelerometermvp.model.AccelerometerData;
 import com.boost.leonid.accelerometermvp.view.tabs.DetailListFragment;
 import com.boost.leonid.accelerometermvp.view.tabs.GraphDataFragment;
+
+import java.util.List;
 
 
 public class TabPagerAdapter extends FragmentPagerAdapter {
@@ -16,11 +19,13 @@ public class TabPagerAdapter extends FragmentPagerAdapter {
 
     private final String[] mTabTitles;
     private final int NUM_TAB;
+    private List<AccelerometerData> mData;
 
-    public TabPagerAdapter(FragmentManager fm, String[] titles) {
+    public TabPagerAdapter(FragmentManager fm, String[] titles, List<AccelerometerData> data) {
         super(fm);
         mTabTitles = titles;
         NUM_TAB = titles.length;
+        mData = data;
     }
 
     @Override
@@ -47,5 +52,10 @@ public class TabPagerAdapter extends FragmentPagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
         return mTabTitles[position];
+    }
+
+    public void setNewData(List<AccelerometerData> coordinates) {
+        Log.d(TAG, "setNewData: ");
+        mData = coordinates;
     }
 }
