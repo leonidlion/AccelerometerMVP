@@ -1,5 +1,7 @@
 package com.boost.leonid.accelerometermvp.presenter.history;
 
+import android.content.Intent;
+
 import com.boost.leonid.accelerometermvp.Constants;
 import com.boost.leonid.accelerometermvp.model.HistoryItem;
 import com.boost.leonid.accelerometermvp.presenter.BasePresenter;
@@ -25,5 +27,10 @@ public class SessionHistoryListPresenterImpl extends BasePresenter<HistoryItem, 
     public void onCreate() {
         view().setRecycler();
         view().setAdapter(mReference);
+    }
+
+    @Override
+    public void onItemClick(DatabaseReference ref) {
+        view().startActivityTab(ref);
     }
 }

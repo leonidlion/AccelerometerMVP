@@ -20,6 +20,7 @@
         <activity android:name=".view.main.MainActivity"/>
         <activity android:name=".view.auth.RegisterActivity"/>
         <activity android:name=".view.history.SessionHistoryListActivity"/>
+        <activity android:name=".view.tabs.TabListGraphActivity"/>
 
     </application>
 

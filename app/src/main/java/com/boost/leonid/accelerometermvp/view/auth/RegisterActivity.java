@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.boost.leonid.accelerometermvp.R;
 import com.boost.leonid.accelerometermvp.presenter.auth.RegisterPresenter;
 import com.boost.leonid.accelerometermvp.presenter.auth.RegisterPresenterImpl;
+import com.boost.leonid.accelerometermvp.view.BaseActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
