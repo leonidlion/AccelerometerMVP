@@ -35,7 +35,7 @@ public class TabPagerAdapter extends FragmentPagerAdapter {
                 break;
             case GRAPH_VIEW_FRAGMENT:
                 Log.d(TAG, "getItem: graph");
-                fragment = new GraphDataFragment();
+                fragment = GraphDataFragment.newInstance(mPath);
                 break;
         }
         return fragment;
