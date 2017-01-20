@@ -35,6 +35,7 @@ public class DetailListFragment extends Fragment {
         View view = inflater.inflate(LAYOUT, container, false);
 
         if (getArguments() != null) {
+            /// TODO: 20.01.17 String Constant
             List<AccelerometerData> list = getArguments().getParcelableArrayList("KEY_D");
             for (AccelerometerData x : list) {
                 Log.d(TAG, "onCreateView: " + x.getX());

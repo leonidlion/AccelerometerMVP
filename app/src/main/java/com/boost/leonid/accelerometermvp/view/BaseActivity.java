@@ -55,6 +55,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     public void hideProgress() {
+        // TODO: 20.01.17 At first you need to check if dialog is null, or you will get NullPointerEx
         if (mProgressDialog.isShowing() && mProgressDialog != null){
             mProgressDialog.dismiss();
         }

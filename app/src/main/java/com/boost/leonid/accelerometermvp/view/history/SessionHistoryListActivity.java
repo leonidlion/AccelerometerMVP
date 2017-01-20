@@ -37,6 +37,7 @@ public class SessionHistoryListActivity extends BaseActivity implements SessionH
 
     @Override
     public void setRecycler(){
+        // TODO: 20.01.17  ButterKnife
         mRecyclerView = (RecyclerView) findViewById(R.id.rv_session_history);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
@@ -45,6 +46,7 @@ public class SessionHistoryListActivity extends BaseActivity implements SessionH
     @Override
     public void setAdapter(final Query query){
         showProgress();
+        // TODO: 20.01.17   Is better to create Class that extends from FirebaseRecyclerAdapter and set it to your RecyclerView,
         FirebaseRecyclerAdapter<HistoryItem, HistoryHolder> adapter = new FirebaseRecyclerAdapter<HistoryItem, HistoryHolder>(HistoryItem.class, R.layout.sesstion_history_item, HistoryHolder.class, query) {
             @Override
             protected void populateViewHolder(HistoryHolder viewHolder, final HistoryItem model, final int position) {

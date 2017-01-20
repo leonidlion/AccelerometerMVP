@@ -16,6 +16,8 @@ public class SessionHistoryListPresenterImpl extends BasePresenter<HistoryItem, 
 
     public SessionHistoryListPresenterImpl(SessionHistoryListView view) {
         bindView(view);
+        // TODO: 20.01.17 Work with Firebase is not part of logic that is placed in Constants class,
+        // create separate Firebase endpoint Class to communicate with Firebase.
         mReference = Constants.getDataCoordinatesOfUserReference(FirebaseAuth.getInstance().getCurrentUser().getUid());
     }
 

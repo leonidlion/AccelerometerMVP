@@ -37,6 +37,7 @@ public abstract class BasePresenter<M, V> {
     }
 
     protected V view() {
+        // TODO: 20.01.17 redundant code, view.get() returns null if view == null
         if (view == null) {
             return null;
         } else {

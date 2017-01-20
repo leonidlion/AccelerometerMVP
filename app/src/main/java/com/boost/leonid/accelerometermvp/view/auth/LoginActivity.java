@@ -46,6 +46,8 @@ public class LoginActivity extends BaseActivity implements LoginView {
     @Override
     protected void onStart() {
         super.onStart();
+        // TODO: 20.01.17 Initialize presenter in onCreate method,
+        // because every time you close app by pressing home button this method is called and another instance of presenter will be created
         mLoginPresenter = new LoginPresenterImpl(this);
         mLoginPresenter.onStart();
     }

@@ -35,6 +35,7 @@ public class LoginPresenterImpl extends BasePresenter<User, LoginView> implement
                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                        @Override
                        public void onComplete(@NonNull Task<AuthResult> task) {
+                           // TODO: 20.01.17 next line can produce NullPointerEx if view == null
                            view().hideProgress();
                            if (task.isSuccessful()){
                                Log.d("PRESENTER", "Login success");
