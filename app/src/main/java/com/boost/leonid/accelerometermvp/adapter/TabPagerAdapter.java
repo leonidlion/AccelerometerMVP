@@ -5,11 +5,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.util.Log;
 
-import com.boost.leonid.accelerometermvp.model.AccelerometerData;
 import com.boost.leonid.accelerometermvp.view.tabs.DetailListFragment;
 import com.boost.leonid.accelerometermvp.view.tabs.GraphDataFragment;
-
-import java.util.List;
 
 
 public class TabPagerAdapter extends FragmentPagerAdapter {
@@ -19,13 +16,13 @@ public class TabPagerAdapter extends FragmentPagerAdapter {
 
     private final String[] mTabTitles;
     private final int NUM_TAB;
-    private List<AccelerometerData> mData;
+    private String mPath;
 
-    public TabPagerAdapter(FragmentManager fm, String[] titles, List<AccelerometerData> data) {
+    public TabPagerAdapter(FragmentManager fm, String[] titles, String path) {
         super(fm);
         mTabTitles = titles;
         NUM_TAB = titles.length;
-        mData = data;
+        mPath = path;
     }
 
     @Override
@@ -34,7 +31,7 @@ public class TabPagerAdapter extends FragmentPagerAdapter {
         switch (position){
             case DETAIL_LIST_FRAGMENT:
                 Log.d(TAG, "getItem: detail");
-                fragment = new DetailListFragment();
+                fragment = DetailListFragment.newInstance(mPath);
                 break;
             case GRAPH_VIEW_FRAGMENT:
                 Log.d(TAG, "getItem: graph");
@@ -54,8 +51,4 @@ public class TabPagerAdapter extends FragmentPagerAdapter {
         return mTabTitles[position];
     }
 
-    public void setNewData(List<AccelerometerData> coordinates) {
-        Log.d(TAG, "setNewData: ");
-        mData = coordinates;
-    }
 }

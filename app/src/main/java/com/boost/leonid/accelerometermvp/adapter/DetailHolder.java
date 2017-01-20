@@ -19,7 +19,7 @@ public class DetailHolder extends RecyclerView.ViewHolder {
     private TextView mYAxis;
     private TextView mZAxis;
 
-    DetailHolder(View itemView) {
+    public DetailHolder(View itemView) {
         super(itemView);
 
         mTime = (TextView) itemView.findViewById(R.id.tv_detail_time);
@@ -28,7 +28,7 @@ public class DetailHolder extends RecyclerView.ViewHolder {
         mZAxis = (TextView) itemView.findViewById(R.id.tv_detail_z);
     }
 
-    void bind(AccelerometerData data){
+    public void bind(AccelerometerData data){
         mTime.setText(getTimeFromLong(data.getUnixTime()));
         mXAxis.setText(String.format(Locale.getDefault(), "%.2f", data.getX()));
         mYAxis.setText(String.format(Locale.getDefault(), "%.2f", data.getY()));
